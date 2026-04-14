@@ -1,78 +1,36 @@
-# aiwearabledraft
-Simple draft of the AI wearable glasses – will add more once the parts arrive.
+# AI Wearable Glasses
+
+A simple project to build AI-powered glasses using an ESP32-CAM with the XIAO ESP32S3 Sense module. Still a work in progress — more updates coming once parts arrive; read the very end to see more.
 
 ---
 
-## esp32_camera_object_detection
+## What It Does
 
-An Arduino sketch that runs on an **AI Thinker ESP32-CAM** board.  
-It captures a frame from the built-in OV2640 camera, classifies the scene
-with a quantised MobileNetV1 model via **TensorFlow Lite for Microcontrollers**,
-and prints the top predicted object label and confidence score to the Serial
-console.
+Captures a frame from the onboard camera, runs it through a MobileNetV1 object detection model, and prints what it sees to the Serial console.
 
-### Hardware
+## Hardware
 
-| Item | Notes |
-|------|-------|
-| AI Thinker ESP32-CAM | Built-in OV2640 camera, 4 MB PSRAM |
-| USB-to-TTL adapter | For programming and Serial monitor (3.3 V logic) |
+- **AI Thinker ESP32-CAM** (OV2640 camera, 4MB PSRAM)
+- **USB-to-TTL adapter** (for flashing and Serial monitor)
 
-### Required Libraries
+## Setup
 
-Install these through **Sketch → Include Library → Manage Libraries…** in the
-Arduino IDE:
+1. Install the `TensorFlowLite_ESP32` library via the Arduino Library Manager
+2. Set the board to **AI Thinker ESP32-CAM**, partition scheme to **Huge APP**
+3. Add your TFLite model as a C byte array in `model_data.h` (see comments in that file)
+4. Flash and open Serial monitor
 
-| Library | Minimum version | Author |
-|---------|-----------------|--------|
-| `TensorFlowLite_ESP32` | 0.9.0 | TensorFlow / Espressif |
-| ESP32 board support (`esp32`) | 2.x | Espressif |
+## Files
 
-### Board Settings (Tools menu)
+- `esp32_camera_object_detection.ino` — main sketch
+- `model_data.h` — model data and labels
 
-| Setting | Value |
-|---------|-------|
-| Board | AI Thinker ESP32-CAM |
-| Partition Scheme | Huge APP (3 MB No OTA / 1 MB SPIFFS) |
-| Upload Speed | 115200 |
-
-### Adding a Model
-
-1. Obtain a quantised (int8) MobileNetV1 TFLite model trained on 96 × 96
-   greyscale images.  A ready-to-use **person-detection** model ships with the
-   `Arduino_TensorFlowLite` library examples.
-2. Convert the `.tflite` file to a C byte array:
-   ```bash
-   xxd -i model.tflite > model_data.h
-   ```
-3. Open `model_data.h` and rename the generated symbols to match:
-   ```c
-   alignas(8) const unsigned char g_model_data[] = { … };
-   const unsigned int g_model_data_len = sizeof(g_model_data);
-   ```
-4. Edit the `g_labels[]` array in `model_data.h` so that each index matches
-   the corresponding output class of your model.
-
-### Expected Serial Output
+## Example Output
 
 ```
-[INFO] ESP32-CAM Object Detection starting…
-[INFO] Camera ready.
-[INFO] TFLite model loaded. Input: 96x96x1  Output classes: 80
----- Detection result ----
 Object  : cat
 Score   : 0.87
---------------------------
----- Detection result ----
-Object  : cat
-Score   : 0.91
---------------------------
 ```
 
-### File Overview
-
-```
-esp32_camera_object_detection/
-├── esp32_camera_object_detection.ino   # Main Arduino sketch
-└── model_data.h                        # Model byte array + label list
-```
+## IMPORTANT NOTE
+More research and development will go into the product once the parts come. I will use this as a basic sketch to finalize the product and then move onto more complex tasks such as face recognition, push notifications to mobile, and more.
