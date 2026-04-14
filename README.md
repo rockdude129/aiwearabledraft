@@ -4,6 +4,7 @@ A simple project to build AI-powered glasses using an ESP32-CAM with the XIAO ES
 
 ---
 ## What makes it different
+<img width="679" height="263" alt="image" src="https://github.com/user-attachments/assets/7f3ef297-3a7f-4fd1-8b78-79ba07ab8dcb" />
 <img width="1362" height="634" alt="image" src="https://github.com/user-attachments/assets/0bdfefe5-55b9-4313-bfc6-7691f3f5a0b2" />
 This image describes it. I am using my own glasses and modifying them to fit my needs, making the glasses beautifully work.
 
