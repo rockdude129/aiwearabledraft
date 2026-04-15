@@ -14,8 +14,8 @@ Captures a frame from the onboard camera, runs it through a MobileNetV1 object d
 
 ## Hardware
 
-- **AI Thinker ESP32-CAM** (OV2640 camera, 4MB PSRAM)
-- **USB-to-TTL adapter** (for flashing and Serial monitor)
+- **ESP32-SENSE CAM and Microcontroller** (OV2640 camera, 4MB PSRAM)
+- **USB-to-TTL adapter** (for flashing and Serial monitor) - (or USB to UART driver if Type-C)
 
 ## Setup
 
