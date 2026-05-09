@@ -39,7 +39,9 @@ Score   : 0.87
 <img width="891" height="213" alt="image" src="https://github.com/user-attachments/assets/269e0627-f950-4ad7-86cc-d107b2f31889" />
 
 https://a.co/d/00o7x7ok - The Glasses!
+
 https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html - The Microcontroller!
+
 With these two things, you can get an extremely smart piece of tech!
 
 ## IMPORTANT NOTE
