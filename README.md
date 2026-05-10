@@ -36,7 +36,9 @@ Object  : cat
 Score   : 0.87
 ```
 ##Materials used to Make this Project
-<img width="891" height="213" alt="image" src="https://github.com/user-attachments/assets/269e0627-f950-4ad7-86cc-d107b2f31889" />
+*Please refer to the BOM.csv ; Below is an easy to see visual
+<img width="1033" height="107" alt="image" src="https://github.com/user-attachments/assets/4ba3cea6-3e66-435d-87db-6d91bcc6f05a" />
+
 
 https://a.co/d/00o7x7ok - The Glasses!
 
