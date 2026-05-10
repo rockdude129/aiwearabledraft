@@ -35,7 +35,7 @@ Captures a frame from the onboard camera, runs it through a MobileNetV1 object d
 Object  : cat
 Score   : 0.87
 ```
-##Materials used to Make this Project
+## Materials used to Make this Project
 *Please refer to the BOM.csv ; Below is an easy to see visual
 <img width="1033" height="107" alt="image" src="https://github.com/user-attachments/assets/4ba3cea6-3e66-435d-87db-6d91bcc6f05a" />
 
